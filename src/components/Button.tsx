@@ -1,4 +1,10 @@
-export default function Button({ buttonType, onClick, children }) {
+interface ButtonProps {
+  buttonType: 'submit' | 'button' | 'reset';
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+export default function Button({ buttonType, onClick, children }: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -9,3 +15,4 @@ export default function Button({ buttonType, onClick, children }) {
     </button>
   );
 }
+
