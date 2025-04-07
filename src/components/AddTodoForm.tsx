@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTodosContext } from "../lib/hooks";
 import Button from "./Button";
 
+
 export default function AddTodoForm() {
   const [todoContent, setTodoContent] = useState("");
   const { addTodo } = useTodosContext();
@@ -24,7 +25,14 @@ export default function AddTodoForm() {
           setTodoContent(e.target.value);
         }}
       />
-      <Button>Add to list</Button>
+    
+// Added for typescript error
+<Button 
+  buttonType="submit" 
+  onClick={() => {}} // or your actual click handler
+>
+  Add Todo
+</Button>
     </form>
   );
 }
